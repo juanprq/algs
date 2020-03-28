@@ -1,17 +1,16 @@
 const selectionSort = (array) => {
   for (i = 0; i < array.length; i++) {
     let minIndex = i;
-    let minValue = array[minIndex];
 
-    for (j = i; j < array.length; j++) {
-      if (array[j] < minValue) {
+    for (j = i + 1; j < array.length; j++) {
+      if (array[j] < array[minIndex]) {
         minIndex = j;
         minValue = array[j];
       }
     }
 
     const aux = array[i];
-    array[i] = minValue;
+    array[i] = array[minIndex];
     array[minIndex] = aux;
   }
 
